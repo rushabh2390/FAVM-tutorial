@@ -15,7 +15,7 @@ from database import(
      
 )
 
-origins = ['http://localhost:8080']
+origins = ['http://localhost:8080','http://127.0.0.1:8080','http://127.0.0.1:8081']
 
 app.add_middleware(
     CORSMiddleware,
@@ -27,7 +27,7 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return{"ping":"pong"}
+    return{"Welcome to Fast api as backend"}
 
 @app.get("/api/todo")
 async def get_todo():

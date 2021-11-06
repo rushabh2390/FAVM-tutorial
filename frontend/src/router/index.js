@@ -4,9 +4,10 @@ import ToDo from '@/components/ToDo'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/todo',
       name: 'todo',
       component: ToDo
     }
