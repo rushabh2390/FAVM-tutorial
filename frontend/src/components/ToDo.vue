@@ -44,14 +44,15 @@
 </template>
 
 <script>
-import axios from 'axios'
+import Axios from 'axios'
 export default {
   data () {
     return {
       todoslist: [],
       title: '',
       description: '',
-      errorsearch: []
+      errorsearch: [],
+      axioslink: Axios.defaults.baseURL
     }
   },
   async created () {
@@ -61,21 +62,21 @@ export default {
     async gettodo () {
       try {
         const headers = {'Content-Type': 'application/json', 'accept': 'application/json'}
-        const response = await axios.get('http://127.0.0.1:8000/api/todo', {headers})
+        const response = await Axios.get('/todo', {headers})
         this.todoslist = response.data
       } catch (error) {
         this.todoslist = []
-        this.errorsearch = error.response.data
+        this.errorsearch = error
         return error.response
       }
     },
     async deletetodo (title) {
       try {
-        const response = await axios.delete(`http://127.0.0.1:8000/api/todo/${title}`)
-        alert(response.data)
+        const response = await Axios.delete(`/todo/${title}`)
         this.gettodo()
       } catch (error) {
-        this.errorsearch = error.response.data
+        console.log('error', error)
+        this.errorsearch = error
         return error.response
       }
     },
@@ -83,12 +84,11 @@ export default {
       try {
         const addTitle = { title: this.title, description: this.description }
         const headers = {'Content-Type': 'application/json', 'accept': 'application/json'}
-        const response = await axios.post('http://127.0.0.1:8000/api/todo', addTitle, {headers})
-        console.log(response.data)
-        alert(response.data)
+        const response = await Axios.post('/todo', addTitle, {headers})
         this.gettodo()
       } catch (error) {
-        this.errorsearch = error.response.data
+        console.log(error)
+        this.errorsearch = error
         return error.response
       }
     }
