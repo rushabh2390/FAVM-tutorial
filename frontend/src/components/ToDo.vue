@@ -51,8 +51,7 @@ export default {
       todoslist: [],
       title: '',
       description: '',
-      errorsearch: [],
-      axioslink: Axios.defaults.baseURL
+      errorsearch: []
     }
   },
   async created () {

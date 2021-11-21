@@ -8,10 +8,7 @@
 import ToDo from './components/ToDo'
 export default {
   components: { ToDo },
-  name: 'App',
-  Components: {
-    ToDo
-  }
+  name: 'App'
 }
 </script>
 
