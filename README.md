@@ -1,6 +1,6 @@
-# FAVM-tutorial
+# FAVM Application (TO-DO application have backend in FASTAPI and store in MongoDB and frontend in Vue CLi)
 ---
-## Required  npm(version: 8.1.2) and python(version >3.7)
+## Required  npm(version: 8.1.2) and python(version >3.7) mongoDB(version 4.4.0)
 ---
 ### Run locally
 1. Clone this repo.
