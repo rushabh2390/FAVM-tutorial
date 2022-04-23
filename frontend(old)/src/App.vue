@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    {{ Title }}
     <to-do></to-do>
   </div>
 </template>
@@ -9,33 +8,17 @@
 import ToDo from './components/ToDo'
 export default {
   components: { ToDo },
-  name: 'App',
-   data () {
-    return {
-      Title: process.env.VUE_APP_TITLE || "To Do List"
-    }
-  }
+  name: 'App'
 }
 </script>
+
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  margin-top: 60px;
 }
 </style>
