@@ -45,7 +45,6 @@
 
 <script>
 import Axios from 'axios'
-Axios.defaults.baseURL = process.env.VUE_APP_API_BACKEND || "http://localhost:8000"
 export default {
   data () {
     return {
