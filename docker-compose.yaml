@@ -6,13 +6,17 @@ services:
     build: ./backend
     ports:
       - 8000:8000
-    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    # command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     depends_on:
       - mongodb
  
   frontend:
     container_name: frontend
-    build: ./frontend
+    build: 
+      context: ./frontend
+      args:
+      - VUE_APP_TITLE=Docker Application
+      - VUE_APP_API_BACKEND=http:\\localhost:8000
     ports:
       - 8080:80
  
