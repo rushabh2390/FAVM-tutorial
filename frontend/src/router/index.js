@@ -1,15 +1,17 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import ToDo from '@/components/ToDo'
-Vue.use(Router)
+import { createRouter, createWebHashHistory } from 'vue-router'
+import ToDo from '../components/ToDo'
 
-export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/todo',
-      name: 'todo',
-      component: ToDo
-    }
-  ]
+const routes = [
+  {
+    path: '/',
+    name: 'Todo',
+    component: ToDo
+  }
+]
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes
 })
+
+export default router

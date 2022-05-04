@@ -2,7 +2,6 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      {{ Title }}
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <div class="card-title">
@@ -52,13 +51,10 @@ export default {
       todoslist: [],
       title: '',
       description: '',
-      errorsearch: [],
-      Title: null,
+      errorsearch: []
     }
   },
   async created () {
-    this.Title = config.VUE_APP_TITLE  || process.env.VUE_APP_TITLE || "To-Do list"
-    Axios.defaults.baseURL = config.VUE_APP_API_BACKEND || process.env.VUE_APP_API_BACKEND || "http://localhost:8000"
     this.gettodo()
   },
   methods: {
