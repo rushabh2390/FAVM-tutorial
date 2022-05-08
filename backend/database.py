@@ -1,10 +1,11 @@
 from typing import Collection
 from model import Todo
-
+import os
 #MongoDB Driver
 import  motor.motor_asyncio
 
-client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://mongodb:27017")
+Mongo_Url =  os.getenv("MONGODB_URL", "mongodb://mongodb:27017")
+client = motor.motor_asyncio.AsyncIOMotorClient(Mongo_Url)
 
 database = client.TodoList
 collection = database.todo
