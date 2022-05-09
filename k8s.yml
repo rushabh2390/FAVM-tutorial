@@ -25,6 +25,11 @@ spec:
             cpu: "1"
         ports:
         - containerPort: 8000
+        env:
+        - name: MONGODB_URL
+          value: mongodb://username:password@mongodb-service:27017
+        - name: Fast_Title
+          value: kubernates runner
 ---
 apiVersion: v1
 kind: Service
